@@ -1,0 +1,1 @@
+fetch(" http://localhost:3000/book).then(r=>r.text()).then(t=>console.log(t.match(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/)[0]))
