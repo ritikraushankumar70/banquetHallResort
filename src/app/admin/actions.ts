@@ -45,7 +45,7 @@ export async function confirmBooking(bookingId: string) {
       .from('bookings')
       .update({ booking_status: 'confirmed' })
       .eq('booking_id', bookingId)
-      .select('event_date, event_type, customers(name, email)')
+      .select('event_date, event_type, customers(name, email, phone)')
       .single();
       
     if (error) {
@@ -97,7 +97,7 @@ export async function rejectBooking(bookingId: string) {
       .from('bookings')
       .update({ booking_status: 'cancelled' })
       .eq('booking_id', bookingId)
-      .select('event_date, event_type, customers(name, email)')
+      .select('event_date, event_type, customers(name, email, phone)')
       .single();
       
     if (error) {
